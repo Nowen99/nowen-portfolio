@@ -15,13 +15,14 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="reading-progress" aria-hidden="true"></div>
   <a class="skip" href="#main">Skip to content</a>
   <div class="grid-background" aria-hidden="true"></div>
   <header class="topbar" id="top">
     <div class="shell nav-inner">
       <a class="brand" href="#top" aria-label="Noah Owen homepage"><span class="brand-mark">N<span class="brand-slash">/</span>O</span><span class="brand-name">NOAH OWEN<span class="brand-dot">.</span></span></a>
       <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
-        <a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#stack">Toolbox</a>
+        <a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#stack">Toolbox</a><a href="#testimonials">Testimonials</a>
       </nav>
       <a class="nav-contact" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
       <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
@@ -34,7 +35,7 @@
         <div class="eyebrow"><span class="status-led"></span> TECHNICAL SUPPORT ENGINEERING <span class="eyebrow-line"></span> TEXAS, USA</div>
         <h1 id="hero-title">The person you call<br>when <span class="serif-emphasis">it gets complicated<span class="period">.</span></span></h1>
         <p class="hero-lead">I'm <strong>Noah Owen</strong> — I untangle complex SaaS, identity, and infrastructure problems, bridge the gap between customers and engineering, and build systems that make life easier.</p>
-        <div class="typing-wrap"><span class="prompt-symbol">&gt;_</span><span class="terminal-prefix">currently exploring</span><span id="typed-focus">Linux, Docker &amp; infrastructure</span></div>
+        <div class="typing-wrap"><span class="prompt-symbol">&gt;_</span><span class="terminal-prefix">currently exploring</span><span class="terminal-output"><span id="typed-focus">Linux, Docker &amp; infrastructure</span></span></div>
         <div class="hero-actions"><a class="button button-primary" href="#projects">Explore my work <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a class="button button-outline" href="#contact">Get in touch <i data-lucide="arrow-right" aria-hidden="true"></i></a></div>
         <div class="hero-social"><a href="https://github.com/Nowen99" target="_blank" rel="noopener noreferrer"><i data-lucide="github" aria-hidden="true"></i> GitHub <span>↗</span></a><span class="social-divider"></span><a href="#contact"><i data-lucide="mail" aria-hidden="true"></i> Contact <span>↗</span></a></div>
       </div>
@@ -45,12 +46,19 @@
         <div class="panel-metrics"><div><strong>140<span>+</span></strong><small>Locations supported<br>at Scenthound</small></div><div><strong>3<span>+</span></strong><small>Years in SaaS<br>& IT operations</small></div><div><strong>4</strong><small>Industry<br>certifications</small></div></div>
         <div class="panel-foot"><span><span class="mini-square"></span> ROOT CAUSE > QUICK FIX</span><span>01 / 01</span></div>
       </aside>
-      <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span class="scroll-track"></span><span>01 — 05</span></div>
+      <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span class="scroll-track"></span><span>01 — 06</span></div>
     </section>
 
     <section class="strip"><div class="shell strip-inner"><span class="strip-label">WORKING AT THE INTERSECTION OF</span><div class="strip-items"><span>ENTERPRISE SAAS</span><span class="strip-plus">✳</span><span>IDENTITY & ACCESS</span><span class="strip-plus">✳</span><span>LINUX / DOCKER</span><span class="strip-plus">✳</span><span>APIS & AUTOMATION</span></div></div></section>
 
-    <section class="section shell about" id="about"><div class="section-intro"><span class="section-number">01 / ABOUT</span><h2>Not just a ticket.<br><span class="muted-heading">The whole problem.</span></h2></div><div class="about-grid"><div class="about-statement">I like the problems that don't come with a playbook<span class="period">.</span></div><div class="about-copy"><p>My work sits where customer support, systems administration, and software engineering overlap. I investigate what's happening beneath the surface — from permissions and API behavior to logs, databases, containerized environments, and complex integrations.</p><p>At NetX, I independently own technical support cases and recreate customer environments to isolate defects. Before that, I helped support and connect critical systems for a growing multi-location business at Scenthound.</p><a href="#work" class="text-link">See where I've worked <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></div></section>
+    <section class="section shell about" id="about"><div class="section-intro"><span class="section-number">01 / ABOUT</span><h2>Not just a ticket.<br><span class="muted-heading">The whole problem.</span></h2></div><div class="about-grid"><div class="about-profile"><img class="about-headshot" src="assets/noah-owen-headshot.png" alt="Noah Owen" width="800" height="800" loading="lazy" decoding="async"><div class="about-statement">I like the problems that don't come with a playbook<span class="period">.</span></div></div><div class="about-copy"><p>My work sits where customer support, systems administration, and software engineering overlap. I investigate what's happening beneath the surface — from permissions and API behavior to logs, databases, containerized environments, and complex integrations.</p><p>At NetX, I independently own technical support cases and recreate customer environments to isolate defects. Before that, I helped support and connect critical systems for a growing multi-location business at Scenthound.</p><a href="#work" class="text-link">See where I've worked <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><div class="about-hobbies" aria-labelledby="hobbies-title">
+          <h3 id="hobbies-title">Away from the keyboard</h3>
+          <ul class="hobbies-list">
+            <li><strong>Brazilian Jiu-Jitsu</strong><span>Purple belt</span></li>
+            <li><strong>Chess</strong><span>A recent hobby</span></li>
+            <li><strong>Gaming</strong><span>A longtime interest</span></li>
+          </ul>
+        </div></div></div></section>
 
     <section class="section section-contrast" id="work"><div class="shell"><div class="section-intro"><span class="section-number">02 / EXPERIENCE</span><div class="section-title-row"><h2>Where I've <span class="muted-heading">made an impact.</span></h2><span class="section-subnote">SELECTED EXPERIENCE / 2023 — PRESENT</span></div></div>
       <div class="experience-list">
@@ -69,9 +77,77 @@
       <p class="project-note"><i data-lucide="info" aria-hidden="true"></i> Detailed write-ups are coming next. Professional work will be documented with sanitized, non-confidential examples.</p>
     </section>
 
-    <section class="section section-contrast toolbox-section" id="stack"><div class="shell"><div class="section-intro"><span class="section-number">04 / TOOLBOX</span><h2>Tools of <span class="muted-heading">the trade.</span></h2></div><div class="toolbox-grid"><div class="toolbox-heading"><p>NOT JUST BUZZWORDS</p><span>Technology I've used in production support, system administration, or hands-on labs.</span></div><div class="toolbox-categories"><div class="tool-category"><h3><i data-lucide="shield-check"></i> Identity & SaaS</h3><p>Microsoft Entra ID · RBAC · Microsoft 365 · Exchange Online · Authentication & Authorization · OAuth</p></div><div class="tool-category"><h3><i data-lucide="terminal"></i> Systems & Infrastructure</h3><p>Linux · Docker · Bash · Windows Server · Networking · Virtualization · Apache Tomcat</p></div><div class="tool-category"><h3><i data-lucide="code-2"></i> Investigation & Automation</h3><p>REST APIs · JSON · SQL · MySQL · Snowflake · Python · Postman · Browser DevTools · Power Automate</p></div></div></div><div class="cert-row"><div><span class="mono">VALIDATED KNOWLEDGE</span><h3>Certifications</h3></div><div class="certs"><span>CompTIA Security+</span><span>CompTIA Linux+</span><span>CompTIA A+</span><span>Microsoft MS-900</span></div></div></div></section>
+    <section class="section section-contrast toolbox-section" id="stack"><div class="shell"><div class="section-intro"><span class="section-number">04 / TOOLBOX</span><h2>Tools of <span class="muted-heading">the trade.</span></h2></div><div class="toolbox-grid"><div class="toolbox-heading"><p>NOT JUST BUZZWORDS</p><span>Technology I've used in production support, system administration, or hands-on labs.</span></div><div class="toolbox-categories"><div class="tool-category"><h3><i data-lucide="shield-check"></i> Identity & SaaS</h3><p>Microsoft Entra ID · RBAC · Microsoft 365 · Exchange Online · Authentication & Authorization · OAuth</p></div><div class="tool-category"><h3><i data-lucide="terminal"></i> Systems & Infrastructure</h3><p>Linux · Docker · Bash · Windows Server · Networking · Virtualization · Apache Tomcat</p></div><div class="tool-category"><h3><i data-lucide="code-2"></i> Investigation & Automation</h3><p>REST APIs · JSON · SQL · MySQL · Snowflake · Python · Postman · Browser DevTools · Power Automate</p></div></div></div><div class="cert-row"><div><span class="mono">VALIDATED KNOWLEDGE</span><h3>Certifications</h3></div><div class="certs">
+          <details class="cert-card">
+            <summary><span class="cert-category">SECURITY</span><span class="cert-name">CompTIA Security+</span><span class="cert-hint">Explore coverage <span aria-hidden="true">+</span></span></summary>
+            <p>Threats and vulnerabilities, secure architecture, identity and access, incident response, and security risk management.</p>
+          </details>
+          <details class="cert-card">
+            <summary><span class="cert-category">SYSTEMS</span><span class="cert-name">CompTIA Linux+</span><span class="cert-hint">Explore coverage <span aria-hidden="true">+</span></span></summary>
+            <p>Linux services, storage and networking; permissions and security; shell scripting, containers, and system troubleshooting.</p>
+          </details>
+          <details class="cert-card">
+            <summary><span class="cert-category">IT FOUNDATIONS</span><span class="cert-name">CompTIA A+</span><span class="cert-hint">Explore coverage <span aria-hidden="true">+</span></span></summary>
+            <p>Hardware, mobile devices and networking; operating systems, security, virtualization, and practical hardware and software troubleshooting.</p>
+          </details>
+          <details class="cert-card">
+            <summary><span class="cert-category">CLOUD &amp; SAAS</span><span class="cert-name">Microsoft MS-900</span><span class="cert-hint">Explore coverage <span aria-hidden="true">+</span></span></summary>
+            <p>Cloud concepts, Microsoft 365 apps and services, security and compliance, plus licensing, pricing, and support.</p>
+          </details>
+        </div></div></div></section>
 
-    <section class="section shell contact-section" id="contact"><span class="section-number">05 / CONTACT</span><div class="contact-body"><div><span class="contact-kicker"><span class="status-led"></span> LET'S TALK</span><h2>Got a tough problem?<br><span class="serif-emphasis">I like those.</span></h2><p>I'm interested in enterprise support engineering, systems administration, and the places where infrastructure and software meet.</p></div><div class="contact-links"><a href="https://github.com/Nowen99" target="_blank" rel="noopener noreferrer"><span><i data-lucide="github"></i> GitHub</span><i data-lucide="arrow-up-right"></i></a><a href="mailto:YOUR_EMAIL@example.com" data-placeholder-link="email"><span><i data-lucide="mail"></i> Email me</span><i data-lucide="arrow-up-right"></i></a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" data-placeholder-link="linkedin"><span><i data-lucide="linkedin"></i> LinkedIn</span><i data-lucide="arrow-up-right"></i></a></div></div></section>
+    <section class="section shell testimonials-section" id="testimonials" aria-labelledby="testimonials-title">
+      <div class="section-intro">
+        <span class="section-number">05 / TESTIMONIALS</span>
+        <h2 id="testimonials-title">From the people <span class="muted-heading">I've worked with.</span></h2>
+        <p class="testimonials-note">Selected excerpts from LinkedIn recommendations.</p>
+      </div>
+      <div class="testimonials-grid">
+        <figure class="testimonial-card testimonial-feature">
+          <span class="testimonial-mark" aria-hidden="true">“</span>
+          <blockquote><p>I was truly amazed how quickly Noah picked things up and in a very short period of time was off and running solving highly complex problems for our customers.</p><details class="recommendation">
+            <summary><span class="recommendation-more">Read full recommendation</span><span class="recommendation-less">Show less</span><span class="recommendation-symbol" aria-hidden="true">+</span></summary>
+            <div class="recommendation-full"><p>We needed to replace our previous Support Technician (who was leaving) and Noah Owen was one of nine candidates that we interviewed for the Technical Support Specialist position at NetX.</p><p>Noah does an outstanding job of solving technical problems as well as being able to communicate technical details to non-technical customers.  Mostly due to the qualities and characteristics of NetX&#x27;s customer base, rather than having a large number of support requests, we tended to have fewer but far more complicated and difficult to solve issues that came in through our Support processes.</p><p>Because of that and the fact that our customers often have highly customized implementations of our product, our Support Technician needs to have a very good understanding of the product and all of the various ways it can be configured.</p><p>I was truly amazed how quickly Noah picked things up and in a very short period of time was off and running solving highly complex problems for our customers.</p><p>I very much looked forward to working with Noah and would love to work with him again in the future if that opportunity should ever arise again.</p><p>Noah Owen is a very impressive Support Specialist and has a bright future in IT ahead of him.</p><p>Best of luck Noah!</p></div>
+          </details></blockquote>
+          <figcaption><div><strong>Dan Tharp</strong><span>Direct manager · NetX</span></div><time datetime="2025-11-24">November 2025</time></figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <span class="testimonial-mark" aria-hidden="true">“</span>
+          <blockquote><p>Noah worked on my team at Aldridge. He was an excellent team member and had a client-first mentality. Noah has impressive technical skills and was one of my top performers. I highly recommend him for any position.</p><details class="recommendation">
+            <summary><span class="recommendation-more">Read full recommendation</span><span class="recommendation-less">Show less</span><span class="recommendation-symbol" aria-hidden="true">+</span></summary>
+            <div class="recommendation-full"><p>Noah worked on my team at Aldridge. He was an excellent team member and had a client-first mentality. Noah has impressive technical skills and was one of my top performers. I highly recommend him for any position.</p></div>
+          </details></blockquote>
+          <figcaption><div><strong>Nicholas Cosby</strong><span>Direct manager · Aldridge</span></div><time datetime="2024-02-22">February 2024</time></figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <span class="testimonial-mark" aria-hidden="true">“</span>
+          <blockquote><p>From day one I found his communication skills with our team and technical acumen to be excellent, and he had an immediate impact for the better to our team.</p><details class="recommendation">
+            <summary><span class="recommendation-more">Read full recommendation</span><span class="recommendation-less">Show less</span><span class="recommendation-symbol" aria-hidden="true">+</span></summary>
+            <div class="recommendation-full"><p>I greatly enjoyed my time working with Noah. From day one I found his communication skills with our team and technical acumen to be excellent, and he had an immediate impact for the better to our team. He possesses exemplary customer support skills as well as showing an excellent retention of his certified skills when putting them into practice day to day.</p><p>Working shoulder to shoulder with him was an absolute joy, I found him to be very friendly to speak to and forthcoming with any information I may have had questions about relating to our support role, as well as being a tremendously quick learner for any institutional knowledge we may have had to throw at him. He was very patient answering any technical questions I or others may have had, while simultaneously being able to translate it in a way that is friendly and easy to pick up for laymen or someone with a bit more know-how. This warm demeanor absolutely translated when speaking with our end users, as we serviced them over the phones. He possesses great skill when it comes to client communications, communicating any relevant info to our end users when necessary, be it in regards to their ongoing ticket information, or just helping them learn and refine their own practices for the future.</p><p>His attention to detail is second to none, and he consistently possessed a fantastic work ethic and warm attitude towards us and our customers day in and day out. I cannot recommend him enough for any future position he may steer to in the future.</p></div>
+          </details></blockquote>
+          <figcaption><div><strong>Zachary Sieck</strong><span>Teammate</span></div><time datetime="2023-08-28">August 2023</time></figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <span class="testimonial-mark" aria-hidden="true">“</span>
+          <blockquote><p>What sets Noah apart is his excellent customer service. He is patient, empathetic, and always willing to listen to the concerns of our clients. He has a natural talent for building positive relationships and delivering exceptional support.</p><details class="recommendation">
+            <summary><span class="recommendation-more">Read full recommendation</span><span class="recommendation-less">Show less</span><span class="recommendation-symbol" aria-hidden="true">+</span></summary>
+            <div class="recommendation-full"><p>I had the privilege of working with Noah at HonorBuilt and I must say that he is an outstanding professional with remarkable skills. Noah&#x27;s technical knowledge and expertise in the field of IT support are impressive. He has a keen ability to diagnose and resolve complex issues quickly and effectively, making him an invaluable asset to our team and our clients.</p><p>What sets Noah apart is his excellent customer service. He is patient, empathetic, and always willing to listen to the concerns of our clients. He has a natural talent for building positive relationships and delivering exceptional support.</p><p>Overall, I highly recommend Noah for any role in IT support. He is a diligent, hardworking, and reliable team member who consistently goes above and beyond to ensure customer satisfaction. If you need any additional information about Noah&#x27;s work or experience, please feel free to contact me.</p></div>
+          </details></blockquote>
+          <figcaption><div><strong>Michael George</strong><span>Senior colleague · HonorBuilt</span></div><time datetime="2023-03-27">March 2023</time></figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <span class="testimonial-mark" aria-hidden="true">“</span>
+          <blockquote><p>Noah is an excellent worker, always taking on new challenges and delivering high-quality results. He has a great attention to detail, and is always looking for ways to improve processes and procedures. He works well both independently and as part of a team, and is a valuable asset to the company.</p><details class="recommendation">
+            <summary><span class="recommendation-more">Read full recommendation</span><span class="recommendation-less">Show less</span><span class="recommendation-symbol" aria-hidden="true">+</span></summary>
+            <div class="recommendation-full"><p>I am writing this recommendation for my colleague Noah Owen, who I have had the pleasure of working with at Honorbuilt. Noah and I started working at the company around the same time, and since then I have been consistently impressed with his work ethic and performance.</p><p>Noah is an excellent worker, always taking on new challenges and delivering high-quality results. He has a great attention to detail, and is always looking for ways to improve processes and procedures. He works well both independently and as part of a team, and is a valuable asset to the company.</p><p>In addition to his technical skills, Noah is a pleasure to work with. He is friendly, approachable, and always willing to lend a hand to his coworkers. He has a positive attitude and a great sense of humor, making him a joy to be around.</p><p>I highly recommend Noah for any position he may be seeking. He has a bright future ahead of him, and I am confident that he will continue to excel in his career. If you have any questions or would like further information, please don&#x27;t hesitate to contact me.</p></div>
+          </details></blockquote>
+          <figcaption><div><strong>Daniel Medrano</strong><span>Teammate · HonorBuilt</span></div><time datetime="2023-02-11">February 2023</time></figcaption>
+        </figure>
+      </div>
+      <a class="text-link" href="https://www.linkedin.com/in/nowen99/" target="_blank" rel="noopener noreferrer">View my LinkedIn profile <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+    </section>
+
+    <section class="section shell contact-section" id="contact"><span class="section-number">06 / CONTACT</span><div class="contact-body"><div><span class="contact-kicker"><span class="status-led"></span> LET'S TALK</span><h2>Got a tough problem?<br><span class="serif-emphasis">I like those.</span></h2><p>I'm interested in enterprise support engineering, systems administration, and the places where infrastructure and software meet.</p></div><div class="contact-links"><a href="https://github.com/Nowen99" target="_blank" rel="noopener noreferrer"><span><i data-lucide="github"></i> GitHub</span><i data-lucide="arrow-up-right"></i></a><a href="mailto:noahpowen@gmail.com"><span><i data-lucide="mail"></i> Email me</span><i data-lucide="arrow-up-right"></i></a><a href="https://www.linkedin.com/in/nowen99/" target="_blank" rel="noopener noreferrer"><span><i data-lucide="linkedin"></i> LinkedIn</span><i data-lucide="arrow-up-right"></i></a></div></div></section>
   </main>
   <footer class="footer"><div class="shell footer-content"><a href="#top" class="footer-brand">N<span>/</span>O</a><span>DESIGNED & BUILT WITH INTENTION.</span><span>© <span id="year">2026</span> NOAH OWEN</span><a href="#top">BACK TO TOP ↑</a></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>

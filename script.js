@@ -1,21 +1,65 @@
 /* Nowen portfolio: site interactions. Dependencies: Typed.js + Lucide (CDN) */
 (function () {
   'use strict';
+  const readingProgress = document.querySelector('.reading-progress');
+  if (readingProgress) {
+    let scheduled = false;
+    const updateProgress = () => {
+      const page = document.documentElement;
+      const distance = page.scrollHeight - page.clientHeight;
+      const progress = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
+      readingProgress.style.transform = `scaleX(${progress})`;
+      scheduled = false;
+    };
+    const scheduleProgress = () => {
+      if (!scheduled) {
+        scheduled = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+    };
+    window.addEventListener('scroll', scheduleProgress, { passive: true });
+    window.addEventListener('resize', scheduleProgress);
+    window.addEventListener('load', scheduleProgress);
+    window.addEventListener('pageshow', scheduleProgress);
+    // Disclosures, image loads, and font changes can alter the page height.
+    if (window.ResizeObserver) new ResizeObserver(scheduleProgress).observe(document.body);
+    updateProgress();
+  }
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const typedElement = document.getElementById('typed-focus');
   if (typedElement && !reducedMotion && window.Typed) {
+    // Typed.js prepends existing text and reuses its position on every loop.
+    // Clear the static fallback only when animation is available.
+    typedElement.textContent = '';
     new Typed('#typed-focus', {
       strings: ['Linux, Docker & infrastructure', 'identity & access management', 'API investigations & automation', 'finding the root cause'],
       typeSpeed: 42,
       backSpeed: 24,
       backDelay: 1800,
       loop: true,
-      smartBackspace: true,
+      smartBackspace: false,
+      contentType: 'text',
       showCursor: true,
       cursorChar: '▍'
     });
   }
   if (window.lucide) window.lucide.createIcons();
+
+  // Native disclosures support tap and keyboard; mouse hover also reveals coverage.
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse') card.open = true;
+    });
+    card.addEventListener('pointerleave', event => {
+      if (event.pointerType === 'mouse' && !card.contains(document.activeElement)) card.open = false;
+    });
+    card.addEventListener('focusout', event => {
+      if (!card.contains(event.relatedTarget) && !card.matches(':hover')) card.open = false;
+    });
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Escape') card.open = false;
+    });
+  });
 
   const toggle = document.querySelector('.mobile-toggle');
   const nav = document.getElementById('site-nav');
@@ -44,25 +88,23 @@
       const parent = node.parentElement;
       if (!node.textContent.trim() || (parent && parent.closest('.period'))) return;
       const fragment = document.createDocumentFragment();
-      [...node.textContent].forEach(char => {
-        if (char === ' ') fragment.appendChild(document.createTextNode(' '));
-        else {
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (/^\s+$/.test(part)) {
+          fragment.appendChild(document.createTextNode(part));
+          return;
+        }
+        if (!part) return;
+        const word = document.createElement('span');
+        word.className = 'hover-word';
+        [...part].forEach(char => {
           const span = document.createElement('span');
           span.className = 'hover-char';
           span.textContent = char;
-          fragment.appendChild(span);
-        }
+          word.appendChild(span);
+        });
+        fragment.appendChild(word);
       });
       node.parentNode.replaceChild(fragment, node);
     });
   }
-  // Placeholder links intentionally non-functional until personal contact details are added.
-  document.querySelectorAll('[data-placeholder-link]').forEach(el => {
-    el.addEventListener('click', event => {
-      if (el.getAttribute('href') === 'mailto:YOUR_EMAIL@example.com' || el.getAttribute('href') === 'https://www.linkedin.com/') {
-        event.preventDefault();
-        alert('Add your contact link in index.html before publishing your portfolio.');
-      }
-    });
-  });
 })();
