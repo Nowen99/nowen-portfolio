@@ -1,9 +1,36 @@
 /* Nowen portfolio: site interactions. Dependencies: Typed.js + Lucide (CDN) */
 (function () {
   'use strict';
+  const readingProgress = document.querySelector('.reading-progress');
+  if (readingProgress) {
+    let scheduled = false;
+    const updateProgress = () => {
+      const page = document.documentElement;
+      const distance = page.scrollHeight - page.clientHeight;
+      const progress = distance > 0 ? Math.max(0, Math.min(1, window.scrollY / distance)) : 0;
+      readingProgress.style.transform = `scaleX(${progress})`;
+      scheduled = false;
+    };
+    const scheduleProgress = () => {
+      if (!scheduled) {
+        scheduled = true;
+        window.requestAnimationFrame(updateProgress);
+      }
+    };
+    window.addEventListener('scroll', scheduleProgress, { passive: true });
+    window.addEventListener('resize', scheduleProgress);
+    window.addEventListener('load', scheduleProgress);
+    window.addEventListener('pageshow', scheduleProgress);
+    // Disclosures, image loads, and font changes can alter the page height.
+    if (window.ResizeObserver) new ResizeObserver(scheduleProgress).observe(document.body);
+    updateProgress();
+  }
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const typedElement = document.getElementById('typed-focus');
   if (typedElement && !reducedMotion && window.Typed) {
+    // Typed.js prepends existing text and reuses its position on every loop.
+    // Clear the static fallback only when animation is available.
+    typedElement.textContent = '';
     new Typed('#typed-focus', {
       strings: ['Linux, Docker & infrastructure', 'identity & access management', 'API investigations & automation', 'finding the root cause'],
       typeSpeed: 42,
