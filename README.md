@@ -2,15 +2,32 @@
 
 A responsive, static developer-style portfolio designed for Cloudflare Pages. No build step required.
 
-## Deploy on your existing Cloudflare Pages project
+## Local development and preview
 
-1. Download and extract the ZIP.
-2. Open your GitHub repository `Nowen99/nowen-portfolio`.
-3. Use **Add file → Upload files** to upload `index.html`, `styles.css`, and `script.js` at the repository **root** (not inside a subfolder).
-4. Commit changes to `main`. Cloudflare Pages automatically redeploys.
-5. Keep `Framework preset: None`; a build step is not required for these static files. Output directory: repository root (`/`).
+Install Node.js LTS (including npm), then run these commands from the repository directory:
 
-If GitHub's upload screen is inconvenient, clone the repository locally, copy the three files into it, then `git add . && git commit -m "Launch portfolio" && git push`.
+```powershell
+npm ci
+npm run dev
+```
+
+Open http://localhost:3000 in your browser. BrowserSync watches HTML, CSS, and JavaScript: saving HTML or JavaScript reloads the page, while CSS changes are injected automatically. Keep the terminal running during iteration; press Ctrl+C to stop it. Run `npm ci` on initial setup or after dependencies change, not before every preview.
+
+The preview server binds to localhost only. It does not deploy anything or open a public tunnel. BrowserSync is a development dependency; the production website still requires no Node runtime or build step. Fonts, Typed.js, and Lucide still load from their existing public CDNs.
+
+For visual changes, check desktop and mobile browser layouts, keyboard navigation, and reduced motion before approval. Use browser responsive mode to check narrow screens and the existing 1000px, 760px, and 430px breakpoints.
+
+## Git review and Cloudflare Pages deployment
+
+- `main` is the production branch. Work on a separate `codex/<descriptive-name>` feature branch for each reviewable change.
+- Iterate locally, preview, request refinements, and review the diff before publication.
+- No branch is pushed, no pull request is merged, and no deployment is initiated without explicit user approval for that action.
+- After approval to push, publish the feature branch to `Nowen99/nowen-portfolio` and open a pull request targeting `main`. Cloudflare may create a hosted preview on branch pushes if preview deployments are enabled.
+- After explicit approval to merge, merge the pull request into `main`. The existing Cloudflare Pages Git integration should then deploy production automatically; check the deployment result before calling it published.
+
+Keep Cloudflare's framework preset as `None`, the build command empty, and the output directory at the repository root (`/`). Adding local npm tooling does not require a production build. In the Cloudflare dashboard, verify that the production branch is `main` and check preview-branch settings; these account-side settings are not recorded in this repository.
+
+See [AGENTS.md](AGENTS.md) for the project standards and approval boundaries.
 
 ## Important personalization before sharing with recruiters
 
