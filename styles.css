@@ -77,3 +77,13 @@
 
 /* Reading progress stays above navigation without shifting page content. */
 .reading-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:var(--mint);transform:scaleX(0);transform-origin:left center;z-index:50;pointer-events:none}
+
+/* Published project evidence first; upcoming write-ups stay secondary. */
+.project-content>.text-link{align-self:flex-start;margin-top:20px;font-size:12px}
+.upcoming-projects{margin-top:48px;border-top:1px solid var(--line);padding-top:28px}
+.upcoming-projects h3{font-size:20px;letter-spacing:-.03em;margin-bottom:8px}
+.upcoming-projects>p{color:var(--muted);font-size:13px}
+.upcoming-projects ul{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.upcoming-projects strong{display:block;font-size:14px;font-weight:600;color:#c5d4d2;margin-bottom:8px}
+.upcoming-projects li span{display:block;color:var(--muted);font-size:12px;line-height:1.8}
+@media(max-width:760px){.upcoming-projects ul{grid-template-columns:1fr;gap:20px}}
