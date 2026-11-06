@@ -10,12 +10,29 @@
       backSpeed: 24,
       backDelay: 1800,
       loop: true,
-      smartBackspace: true,
+      smartBackspace: false,
+      contentType: 'text',
       showCursor: true,
       cursorChar: '▍'
     });
   }
   if (window.lucide) window.lucide.createIcons();
+
+  // Native disclosures support tap and keyboard; mouse hover also reveals coverage.
+  document.querySelectorAll('.cert-card').forEach(card => {
+    card.addEventListener('pointerenter', event => {
+      if (event.pointerType === 'mouse') card.open = true;
+    });
+    card.addEventListener('pointerleave', event => {
+      if (event.pointerType === 'mouse' && !card.contains(document.activeElement)) card.open = false;
+    });
+    card.addEventListener('focusout', event => {
+      if (!card.contains(event.relatedTarget) && !card.matches(':hover')) card.open = false;
+    });
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Escape') card.open = false;
+    });
+  });
 
   const toggle = document.querySelector('.mobile-toggle');
   const nav = document.getElementById('site-nav');
@@ -44,25 +61,23 @@
       const parent = node.parentElement;
       if (!node.textContent.trim() || (parent && parent.closest('.period'))) return;
       const fragment = document.createDocumentFragment();
-      [...node.textContent].forEach(char => {
-        if (char === ' ') fragment.appendChild(document.createTextNode(' '));
-        else {
+      node.textContent.split(/(\s+)/).forEach(part => {
+        if (/^\s+$/.test(part)) {
+          fragment.appendChild(document.createTextNode(part));
+          return;
+        }
+        if (!part) return;
+        const word = document.createElement('span');
+        word.className = 'hover-word';
+        [...part].forEach(char => {
           const span = document.createElement('span');
           span.className = 'hover-char';
           span.textContent = char;
-          fragment.appendChild(span);
-        }
+          word.appendChild(span);
+        });
+        fragment.appendChild(word);
       });
       node.parentNode.replaceChild(fragment, node);
     });
   }
-  // Placeholder links intentionally non-functional until personal contact details are added.
-  document.querySelectorAll('[data-placeholder-link]').forEach(el => {
-    el.addEventListener('click', event => {
-      if (el.getAttribute('href') === 'mailto:YOUR_EMAIL@example.com' || el.getAttribute('href') === 'https://www.linkedin.com/') {
-        event.preventDefault();
-        alert('Add your contact link in index.html before publishing your portfolio.');
-      }
-    });
-  });
 })();

@@ -1,6 +1,28 @@
-# Noah Owen — Portfolio (first pass)
+# Noah Owen — Engineering Portfolio
 
-A responsive, static developer-style portfolio designed for Cloudflare Pages. No build step required.
+Personal portfolio focused on technical support engineering, enterprise SaaS, identity and access management, Linux, Docker, APIs, and automation.
+
+My work connects customer support, systems administration, and engineering: investigating complex issues, finding root causes, and communicating clear solutions.
+
+[LinkedIn](https://www.linkedin.com/in/nowen99/) · [GitHub](https://github.com/Nowen99) · [Email](mailto:noahpowen@gmail.com)
+
+## What you'll find
+
+- Professional experience across enterprise software support and IT operations.
+- Projects exploring self-hosted infrastructure, Linux administration, and workflow automation.
+- Technical skills and certifications with concise coverage summaries.
+- Recommendations from managers and colleagues, with expandable full text.
+- A little about me outside work: Brazilian Jiu-Jitsu, chess, and gaming.
+
+## Built with
+
+Static HTML, CSS, and JavaScript, hosted on Cloudflare Pages. The design uses dark slate surfaces, muted teal accents, DM Sans, and IBM Plex Mono.
+
+- **Typed.js 2.1.0** for the hero typewriter effect.
+- **Lucide 0.468.0** for SVG icons.
+- **BrowserSync** for local development and live reload.
+
+The site has no framework or production build requirement. It includes responsive layouts, keyboard focus styles, a skip link, and reduced-motion support. Fonts and browser libraries load from public CDNs; core page content remains available if those services are unavailable.
 
 ## Local development and preview
 
@@ -29,19 +51,10 @@ Keep Cloudflare's framework preset as `None`, the build command empty, and the o
 
 See [AGENTS.md](AGENTS.md) for the project standards and approval boundaries.
 
-## Important personalization before sharing with recruiters
-
-- Replace `YOUR_EMAIL@example.com` in `index.html` with your real professional contact email.
-- Replace the generic LinkedIn URL `https://www.linkedin.com/` with your profile link.
-- Add your PDF resume as `resume.pdf` and create a download link in the header or contact section.
-- Review all descriptions and certifications for accuracy, particularly LinkedIn details and Linux+ status.
-- Project cards intentionally contain **no invented GitHub repo links**. Add case-study pages as your write-ups are ready.
-- Customer details from NetX and Scenthound should stay sanitized and non-confidential.
-
 ## Branding and interaction
 
 - Deep slate background: `#0b1219`
-- Mint/teal accent: `#9bdcc9`; old nowen.io accent reference: `#74aa9c`
+- Mint/teal accent: `#9bdcc9`; secondary teal: `#74aa9c`
 - Headline font: DM Sans; terminal UI: IBM Plex Mono
 - Typed.js 2.1.0 for hero typewriter effect
 - Lucide 0.468.0 for icons
@@ -50,6 +63,6 @@ See [AGENTS.md](AGENTS.md) for the project standards and approval boundaries.
 
 Dependencies are loaded from public CDNs. An active internet connection is required for those effects/fonts; the content remains visible if they are unavailable.
 
-## Notes
+## Project documentation
 
-This is a visual and content **first pass**, designed as an engineer's personal brand and not a confidential corporate case-study repository. It deliberately uses truthful, broad project summaries instead of unverified performance metrics.
+Project cards currently provide overviews; detailed case studies will be added as they are ready. Professional examples are kept sanitized and non-confidential.
