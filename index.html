@@ -71,6 +71,19 @@
     <section class="section shell projects-section" id="projects"><div class="section-intro"><span class="section-number">03 / SELECTED PROJECTS</span><div class="section-title-row"><h2>Building things <span class="muted-heading">after hours.</span></h2><span class="section-subnote">DOCUMENTED LABS / SOURCE CODE</span></div></div>
       <div class="projects-grid">
         <article class="project-card feature-project">
+          <div class="project-art art-terminal" aria-hidden="true">
+            <div class="terminal-title">K8S / READINESS</div>
+            <div class="terminal-lines"><span>NGINX rollout stalled</span><span>Probe returned HTTP 404</span><span>Restored the probe path</span><span><em>Verified: 1 ready replica</em></span></div>
+          </div>
+          <div class="project-content">
+            <div class="project-overline"><span>FEATURED / TROUBLESHOOTING LAB</span></div>
+            <h3>Kubernetes incident response lab</h3>
+            <p>Ran the same NGINX image with Docker, Compose, and Kubernetes. Then I broke a readiness probe, diagnosed why the rollout stalled while the old replica stayed ready, and verified recovery after restoring the probe path.</p>
+            <div class="tags"><span>Kubernetes</span><span>Docker Compose</span><span>kind</span><span>NGINX</span></div>
+            <a class="text-link" href="https://github.com/Nowen99/kubernetes-incident-response-lab" target="_blank" rel="noopener noreferrer">Explore the Kubernetes lab <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+        <article class="project-card">
           <div class="project-art art-flow" aria-hidden="true"><div class="flow-visual"><div><i data-lucide="server"></i><span>DOMAIN</span></div><span class="flow-connector"></span><div class="flow-center"><i data-lucide="network"></i></div><span class="flow-connector"></span><div><i data-lucide="monitor"></i><span>CLIENT</span></div></div><div class="flow-caption">ACTIVE DIRECTORY / VIRTUALBOX</div></div>
           <div class="project-content"><div class="project-overline"><span>01 / INFRASTRUCTURE LAB · 2022</span></div><h3>Active Directory home lab</h3><p>Configured a Windows domain in VirtualBox, explored DHCP and DNS, joined a client, and practiced bulk user provisioning with PowerShell. Includes the original walkthrough, screenshots, and script attribution.</p><div class="tags"><span>Windows Server</span><span>Active Directory</span><span>PowerShell</span><span>VirtualBox</span></div><a class="text-link" href="https://github.com/Nowen99/active-directory-home-lab" target="_blank" rel="noopener noreferrer">Explore the Active Directory lab <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
         </article>
